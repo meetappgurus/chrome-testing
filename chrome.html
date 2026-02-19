@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>iPhone Chrome Safe Layout</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    /* App Wrapper */
+    .app {
+      min-height: calc(var(--vh, 1vh) * 100);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    .header {
+      background: #111;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    /* Scrollable Content */
+    .content {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      background: #f2f2f2;
+    }
+
+    .section {
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+
+    /* Bottom Fixed Nav */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #ffffff;
+      padding: 15px;
+      text-align: center;
+      border-top: 1px solid #ddd;
+
+      /* Safe area for iPhone */
+      padding-bottom: calc(15px + env(safe-area-inset-bottom));
+
+      /* GPU layer fix */
+      transform: translateZ(0);
+      will-change: transform;
+    }
+
+    /* Extra space so content not hide behind nav */
+    .content::after {
+      content: "";
+      display: block;
+      height: 80px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <header class="header">
+    iPhone Chrome Safe Page
+  </header>
+
+  <main class="content">
+    <div class="section">
+      
+      <div class="card">Content Block 1</div>
+      <div class="card">Content Block 2</div>
+      <div class="card">Content Block 3</div>
+      <div class="card">Content Block 4</div>
+      <div class="card">Content Block 5</div>
+      <div class="card">Content Block 6</div>
+      <div class="card">Content Block 7</div>
+      <div class="card">Content Block 8</div>
+      <div class="card">Content Block 9</div>
+      <div class="card">Content Block 10</div>
+      <div class="card">Content Block 1</div>
+      <div class="card">Content Block 2</div>
+      <div class="card">Content Block 3</div>
+      <div class="card">Content Block 4</div>
+      <div class="card">Content Block 5</div>
+      <div class="card">Content Block 6</div>
+      <div class="card">Content Block 7</div>
+      <div class="card">Content Block 8</div>
+      <div class="card">Content Block 9</div>
+      <div class="card">Content Block 10</div><div class="card">Content Block 1</div>
+      <div class="card">Content Block 2</div>
+      <div class="card">Content Block 3</div>
+      <div class="card">Content Block 4</div>
+      <div class="card">Content Block 5</div>
+      <div class="card">Content Block 6</div>
+      <div class="card">Content Block 7</div>
+      <div class="card">Content Block 8</div>
+      <div class="card">Content Block 9</div>
+      <div class="card">Content Block 10</div><div class="card">Content Block 1</div>
+      <div class="card">Content Block 2</div>
+      <div class="card">Content Block 3</div>
+      <div class="card">Content Block 4</div>
+      <div class="card">Content Block 5</div>
+      <div class="card">Content Block 6</div>
+      <div class="card">Content Block 7</div>
+      <div class="card">Content Block 8</div>
+      <div class="card">Content Block 9</div>
+      <div class="card">Content Block 10</div><div class="card">Content Block 1</div>
+      <div class="card">Content Block 2</div>
+      <div class="card">Content Block 3</div>
+      <div class="card">Content Block 4</div>
+      <div class="card">Content Block 5</div>
+      <div class="card">Content Block 6</div>
+      <div class="card">Content Block 7</div>
+      <div class="card">Content Block 8</div>
+      <div class="card">Content Block 9</div>
+      <div class="card">Content Block 10</div><div class="card">Content Block 1</div>
+      <div class="card">Content Block 2</div>
+      <div class="card">Content Block 3</div>
+      <div class="card">Content Block 4</div>
+      <div class="card">Content Block 5</div>
+      <div class="card">Content Block 6</div>
+      <div class="card">Content Block 7</div>
+      <div class="card">Content Block 8</div>
+      <div class="card">Content Block 9</div>
+      <div class="card">Content Block 10</div><div class="card">Content Block 1</div>
+      <div class="card">Content Block 2</div>
+      <div class="card">Content Block 3</div>
+      <div class="card">Content Block 4</div>
+      <div class="card">Content Block 5</div>
+      <div class="card">Content Block 6</div>
+      <div class="card">Content Block 7</div>
+      <div class="card">Content Block 8</div>
+      <div class="card">Content Block 9</div>
+      <div class="card">Content Block 10</div><div class="card">Content Block 1</div>
+      <div class="card">Content Block 2</div>
+      <div class="card">Content Block 3</div>
+      <div class="card">Content Block 4</div>
+      <div class="card">Content Block 5</div>
+      <div class="card">Content Block 6</div>
+      <div class="card">Content Block 7</div>
+      <div class="card">Content Block 8</div>
+      <div class="card">Content Block 9</div>
+      <div class="card">Content Block 10</div><div class="card">Content Block 1</div>
+      <div class="card">Content Block 2</div>
+      <div class="card">Content Block 3</div>
+      <div class="card">Content Block 4</div>
+      <div class="card">Content Block 5</div>
+      <div class="card">Content Block 6</div>
+      <div class="card">Content Block 7</div>
+      <div class="card">Content Block 8</div>
+      <div class="card">Content Block 9</div>
+      <div class="card">Content Block 10</div>
+
+    </div>
+  </main>
+
+  <footer class="bottom-nav">
+    Bottom Navigation
+  </footer>
+
+</div>
+
+<script>
+  function setVH() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
+  setVH();
+  window.addEventListener('resize', setVH);
+</script>
+
+</body>
+</html>
